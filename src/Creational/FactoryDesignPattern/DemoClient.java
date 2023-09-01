@@ -3,13 +3,17 @@ package Creational.FactoryDesignPattern;
 //In Factory Pattern you are creating a factory class which has the return type of another class whose objects you want.
 
 /**
- * In Factory design pattern there is a interface which abstracts the implementation layer from the client which is then implemented by
+ * In Factory design pattern there is a interface or an abstract class
+ * which abstracts the implementation layer from the client which is then implemented by
  * the concrete classes present beneath the interface.
+ *
+ * We create an object of abstract class and have the reference of the abstract Class factory
+ * which further processes and invokes the required class which extends the abstract class.
  */
 public class DemoClient {
     public static void main(String[] args) {
-        Course hldCourse = CourseFactory.getCourse("HLD");
-        Course lldCourse = CourseFactory.getCourse("LLD");
+        CourseFactory hldCourse = CourseFactory.getCourse("HLD");
+        CourseFactory lldCourse = CourseFactory.getCourse("LLD");
 
         assert hldCourse!=null;
         System.out.println("HLD Modules: ");

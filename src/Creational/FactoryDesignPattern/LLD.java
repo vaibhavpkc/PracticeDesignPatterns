@@ -1,6 +1,6 @@
 package Creational.FactoryDesignPattern;
 
-public class LLD extends Course{
+public class LLD extends CourseFactory {
     @Override
     public void createCourse() {
         modules.add(new IntroModule() );

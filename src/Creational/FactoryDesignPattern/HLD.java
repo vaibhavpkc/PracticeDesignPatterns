@@ -1,6 +1,6 @@
 package Creational.FactoryDesignPattern;
 
-public class HLD extends Course{
+public class HLD extends CourseFactory{
 
     @Override
     public void createCourse(){
