@@ -4,13 +4,14 @@ import java.awt.print.Book;
 
 public class Demo {
     public static void main(String[] args) {
+/*
 //        How Facade Design Pattern helps.
 //        The client here has no knowledge of the internal communication of the classes.
         User user = new User("vaibhav","vaibhav@gmail.com", 123456789);
         BookingFacade bookingFacade = new BookingFacade();
         bookingFacade.createBooking(user);
+*/
 
-/*
 //        Without Facade Design Pattern.
 //        The client class here has knowledge of so many classes. And it has to interact with so many subsystems.
         User user = new User("vaibhav","vaibhav@gmail.com", 123456789);
@@ -26,7 +27,7 @@ public class Demo {
             NotificationSystem ns =new NotificationSystem();
             ns.sendEmail(user,ts.getTicketNumber());
             ns.sendSms(user,ts.getTicketNumber());
-        }*/
+        }
 
 
     }

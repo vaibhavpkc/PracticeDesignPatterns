@@ -20,6 +20,7 @@ public class LiskovExample {
 
     public static class BeverageItem extends MenuItem{
 
+        //@Component("beverageItem")
         public BeverageItem(int price, String name, String description){
             super(price, name, description);
         }
@@ -42,6 +43,18 @@ public class LiskovExample {
                 System.out.println(item.getPrice());
             }
         }
+
+        /***
+         * The above issue can be resolved by having a Map<String,Beantype> introduced which will address the issue of initialisation of the bean with the correct bean implementation as specified.
+         * The string will be the bean name or the qualifier which will be used  to refer the bean implementation.
+         * example:
+         * // Create a HashMap with a single key-value pair
+         *         HashMap<String, BeverageItem> menuMap = new HashMap<>();
+         *         menuMap.put("beverageItem", new BeverageItem(100, "Bread", "wheat flour bread"));
+         *
+         *         and similarly handle the implementation in the class being called for. Please refer qualifier.md in the same package.
+         * @param args
+         */
         public static void main(String[] args) {
 
             MenuItem menuItem =new MenuItem(100,"Bread","wheat flour bread");

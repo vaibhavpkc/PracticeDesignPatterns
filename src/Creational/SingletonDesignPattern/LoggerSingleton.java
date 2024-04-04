@@ -1,5 +1,7 @@
 package Creational.SingletonDesignPattern;
 
+import java.io.Serializable;
+
 /**
  * The Singleton design pattern is a creational design pattern
  * that ensures a class has only one instance and provides a
@@ -13,7 +15,7 @@ package Creational.SingletonDesignPattern;
  * It can only contain one public method, and the instance is a private instance.
  */
 
-public class LoggerSingleton {
+public class LoggerSingleton implements Serializable {
 /**    not thread safe. This is Eager Loading which is commented.*/
 /*
     private static LoggerSingleton instance = new LoggerSingleton();
@@ -26,11 +28,14 @@ public class LoggerSingleton {
         return instance;
     }
 */
-    /**    not thread safe. This is Lazy Loading which is commented.*/
+    /**    not thread safe. This is Lazy Loading*/
 //use of volatile in the object description.
+//            Below is lazy loading by making the object equal to null.
     private static volatile LoggerSingleton instance = null;
 
 //    with the use of reflection the constructor can be accessed. So, keeping this in check here.
+//    The constructor has been made private in the case of Singleton to avoid instantiation of class objects from outside the class,
+//    as it violates the principle of Singleton.
     private LoggerSingleton(){
         if(instance!=null){
             throw new RuntimeException("Please don't try to be smart.");
